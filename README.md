@@ -13,28 +13,28 @@
 <div align="center">
   <div style="display: flex; justify-content: center;">
     <div style="margin-right: 20px;">
-      <img src="https://raw.githubusercontent.com/RPegoud/jumanji_prioritised_dqn/main/images/maze.png" alt="Image 1"/>
+      <img src="https://raw.githubusercontent.com/RPegoud/jumanji_prioritised_dqn/main/images/maze.png" alt="Image 1" width="300"/>
       <p align="center"><em>Maze-v0</em></p>
     </div>
     <div style="margin-right: 20px;">
-      <img src="https://raw.githubusercontent.com/RPegoud/jumanji_prioritised_dqn/main/images/knapsack.png" alt="Image 2"/>
-      <p align="center"><em>``Knapsack``</em></p>
+      <img src="https://raw.githubusercontent.com/RPegoud/jumanji_prioritised_dqn/main/images/knapsack.png" alt="Image 2" width="300"/>
+      <p align="center"><em>Knapsack-v1</em></p>
     </div>
     <div>
-      <img src="https://raw.githubusercontent.com/RPegoud/jumanji_prioritised_dqn/main/images/cvpr.png" alt="Image 3"/>
-      <p align="center"><em>Dyna</em></p>
+      <img src="https://raw.githubusercontent.com/RPegoud/jumanji_prioritised_dqn/main/images/cvpr.png" alt="Image 3" width="300"/>
+      <p align="center"><em>CVPR-v1<br>Capacitated Vehicle Routing Problem</em></p>
     </div>
   </div>
 </div>
 <div align="center">
   <div style="display: flex; justify-content: center;">
     <div style="margin-right: 20px;">
-      <img src="https://raw.githubusercontent.com/RPegoud/jumanji_prioritised_dqn/main/images/tsp.png" alt="Image 1"/>
-      <p align="center"><em></em></p>
+      <img src="https://raw.githubusercontent.com/RPegoud/jumanji_prioritised_dqn/main/images/tsp.png" alt="Image 1" width="300"/>
+      <p align="center"><em>TSP-v1<br>Traveling Sales Person</em></p>
     </div>
     <div style="margin-right: 20px;">
-      <img src="https://raw.githubusercontent.com/RPegoud/jumanji_prioritised_dqn/main/images/snake.png" alt="Image 2"/>
-      <p align="center"><em></em></p>
+      <img src="https://raw.githubusercontent.com/RPegoud/jumanji_prioritised_dqn/main/images/snake.png" alt="Image 2" width="300"/>
+      <p align="center"><em>Snake-v1</em></p>
     </div>
   </div>
 </div>
