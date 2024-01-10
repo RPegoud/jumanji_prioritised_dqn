@@ -6,7 +6,7 @@
 | knapsack    | 1.200.000 | 8min20s | 43s                    | Yes       | No       |
 | maze        | 1.200.000 | 12min41s| 1min5s                 | No        | No       |
 | snake       | 80.000    | 12min9s | 15min                  | No        | Yes      |
-| tsp         | 300.000   | 1min25s | 28s                    | Yes       | No       |
+| tsp         | 1.200.000 | 6min11s | 31s                    | Yes       | No       |
 
 ## Learning Curves
 <!-- 
