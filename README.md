@@ -10,6 +10,7 @@
 
 ## Learning Curves
 
+*Ces courbes sont fournies à titre indicatif pour des paramètres/architectures arbitraires qui nécessitent d'être optimisés.*
 <div align="center">
   <div style="display: flex; justify-content: center;">
     <div style="margin-right: 20px;">
@@ -38,3 +39,75 @@
     </div>
   </div>
 </div>
+
+### ***Hyperparameters:***
+
+```python
+# Number of Training-Evaluation iterations
+TRAINING_EVAL_ITERS = 120 # or 60 for environments requiring CNN
+
+# Training parameters
+BATCH_SIZE = 32
+LEARNING_RATE = 5e-4
+SEED = 42
+NUM_ENVS = 8
+BUFFER_SIZE = 10_000
+ROLLOUT_LEN = 512
+SGD_STEPS_PER_ROLLOUT = 64
+TRAINING_ITERS = 20
+TARGET_PERIOD = 10
+AGENT_DISCOUNT = 0.99
+EPSILON_INIT = 1.0
+EPSILON_FINAL = 0.1
+EPSILON_STEPS = 10_000
+PRIORTIY_EXPONENT = 0.6
+IMPORTANCE_SAMPLING_EXPONENT = 0.6
+
+# Evaluation parameters
+NUM_EVAL_EPISODES = 50
+```
+
+### ***DQN Architecture without CNN***
+
+```python
+def get_network_fn(num_outputs: int):
+    def network_fn(obs: chex.Array) -> chex.Array:
+        """Outputs action logits."""
+        network = hk.Sequential(
+            [
+            hk.Linear(64),
+            jax.nn.relu,
+            hk.Linear(128),
+            jax.nn.relu,
+            hk.Linear(num_outputs),
+            ]
+        )
+        return network(obs)
+
+    return hk.without_apply_rng(hk.transform(network_fn))
+```
+
+### ***DQN Architecture with CNN***
+
+```python
+def get_network_fn(num_outputs: int):
+    def network_fn(obs: chex.Array) -> chex.Array:
+        """Outputs action logits."""
+        network = hk.Sequential(
+            [
+            hk.Conv2D(32, kernel_shape=2, stride=1),
+            jax.nn.relu,
+            hk.Conv2D(32, kernel_shape=2, stride=1),
+            jax.nn.relu,
+            hk.Flatten(),
+            hk.Linear(64),
+            jax.nn.relu,
+            hk.Linear(128),
+            jax.nn.relu,
+            hk.Linear(num_outputs),
+            ]
+        )
+        return network(obs)
+
+    return hk.without_apply_rng(hk.transform(network_fn))
+```
